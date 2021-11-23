@@ -5,6 +5,12 @@ actions:
     handler: http://host.docker.internal:5000/api/auth/login
   permissions:
   - role: public
+- name: refresh
+  definition:
+    kind: synchronous
+    handler: http://host.docker.internal:5000/api/auth/refresh
+  permissions:
+  - role: public
 custom_types:
   enums: []
   input_objects: []
