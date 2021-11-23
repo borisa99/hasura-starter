@@ -5,8 +5,8 @@ type Mutation {
   ): JWTResponse
 }
 
-type Mutation {
-  me: JWTResponse
+type Query {
+  me: UserResponse
 }
 
 type Mutation {
@@ -35,5 +35,15 @@ type JWTResponse {
 
 type SuccessResponse {
   value: String!
+}
+
+type UserResponse {
+  id: uuid!
+  account_id: uuid!
+  email: String!
+  first_name: String!
+  last_name: String!
+  avatar_url: String!
+  roles: [String!]!
 }
 

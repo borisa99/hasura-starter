@@ -28,6 +28,9 @@ services:
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "public"
+      ACTION_BASE_URL: "http://host.docker.internal:5000/api"
+      HASURA_GRAPHQL_JWT_SECRET: >-
+        {"type":"HS256", "key":"68zcgxChM2%UT@MyJ^eg5ecbR8kw9hFi74g8"}
   mailhog:
     image: mailhog/mailhog
     logging:

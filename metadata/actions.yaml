@@ -2,29 +2,32 @@ actions:
 - name: login
   definition:
     kind: synchronous
-    handler: http://host.docker.internal:5000/api/auth/login
+    handler: '{{ACTION_BASE_URL}}/auth/login'
   permissions:
   - role: public
 - name: me
   definition:
-    kind: synchronous
-    handler: http://host.docker.internal:3000/api/user/me
+    kind: ""
+    handler: '{{ACTION_BASE_URL}}/user/me'
+    forward_client_headers: true
+  permissions:
+  - role: user
 - name: refresh
   definition:
     kind: synchronous
-    handler: http://host.docker.internal:5000/api/auth/refresh
+    handler: '{{ACTION_BASE_URL}}/auth/refresh'
   permissions:
   - role: public
 - name: request_reset_password
   definition:
     kind: synchronous
-    handler: http://host.docker.internal:5000/api/auth/request_reset_password
+    handler: '{{ACTION_BASE_URL}}/auth/request_reset_password'
   permissions:
   - role: public
 - name: reset_password
   definition:
     kind: synchronous
-    handler: http://host.docker.internal:5000/api/auth/reset_password
+    handler: '{{ACTION_BASE_URL}}/auth/reset_password'
   permissions:
   - role: public
 custom_types:
@@ -33,4 +36,5 @@ custom_types:
   objects:
   - name: JWTResponse
   - name: SuccessResponse
+  - name: UserResponse
   scalars: []
