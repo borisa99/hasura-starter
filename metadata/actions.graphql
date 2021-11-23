@@ -23,6 +23,12 @@ type Mutation {
 }
 
 type Mutation {
+  register(
+    user: RegisterUser!
+  ): SuccessResponse
+}
+
+type Mutation {
   request_reset_password(
     email: String!
   ): SuccessResponse
@@ -33,6 +39,15 @@ type Mutation {
     ticket: String!
     password: String!
   ): SuccessResponse
+}
+
+input RegisterUser {
+  ticket: uuid!
+  first_name: String!
+  last_name: String!
+  avatar_url: String!
+  password: String!
+  email: String!
 }
 
 type JWTResponse {

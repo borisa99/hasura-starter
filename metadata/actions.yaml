@@ -25,6 +25,12 @@ actions:
     handler: '{{ACTION_BASE_URL}}/auth/refresh'
   permissions:
   - role: public
+- name: register
+  definition:
+    kind: synchronous
+    handler: '{{ACTION_BASE_URL}}/auth/register'
+  permissions:
+  - role: public
 - name: request_reset_password
   definition:
     kind: synchronous
@@ -39,7 +45,8 @@ actions:
   - role: public
 custom_types:
   enums: []
-  input_objects: []
+  input_objects:
+  - name: RegisterUser
   objects:
   - name: JWTResponse
   - name: SuccessResponse
