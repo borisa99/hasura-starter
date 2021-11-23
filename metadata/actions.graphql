@@ -1,4 +1,11 @@
 type Mutation {
+  invite(
+    email: String!
+    role: String!
+  ): SuccessResponse!
+}
+
+type Mutation {
   login(
     email: String!
     password: String!

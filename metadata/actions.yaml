@@ -1,4 +1,11 @@
 actions:
+- name: invite
+  definition:
+    kind: synchronous
+    handler: '{{ACTION_BASE_URL}}/auth/invite'
+    forward_client_headers: true
+  permissions:
+  - role: user
 - name: login
   definition:
     kind: synchronous
