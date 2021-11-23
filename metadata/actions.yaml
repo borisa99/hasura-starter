@@ -11,9 +11,22 @@ actions:
     handler: http://host.docker.internal:5000/api/auth/refresh
   permissions:
   - role: public
+- name: request_reset_password
+  definition:
+    kind: synchronous
+    handler: http://host.docker.internal:5000/api/auth/request_reset_password
+  permissions:
+  - role: public
+- name: reset_password
+  definition:
+    kind: synchronous
+    handler: http://host.docker.internal:5000/api/auth/reset_password
+  permissions:
+  - role: public
 custom_types:
   enums: []
   input_objects: []
   objects:
   - name: JWTResponse
+  - name: SuccessResponse
   scalars: []

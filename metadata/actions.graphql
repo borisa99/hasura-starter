@@ -11,8 +11,25 @@ type Mutation {
   ): JWTResponse
 }
 
+type Mutation {
+  request_reset_password(
+    email: String!
+  ): SuccessResponse
+}
+
+type Mutation {
+  reset_password(
+    ticket: String!
+    password: String!
+  ): SuccessResponse
+}
+
 type JWTResponse {
   token: String!
   refresh_token: String!
+}
+
+type SuccessResponse {
+  value: String!
 }
 
