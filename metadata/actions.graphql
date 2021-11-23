@@ -1,0 +1,12 @@
+type Mutation {
+  login(
+    email: String!
+    password: String!
+  ): JWTResponse
+}
+
+type JWTResponse {
+  token: String!
+  refresh_token: String!
+}
+
