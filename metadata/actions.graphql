@@ -6,6 +6,10 @@ type Mutation {
 }
 
 type Mutation {
+  me: JWTResponse
+}
+
+type Mutation {
   refresh(
     refresh_token: String!
   ): JWTResponse
